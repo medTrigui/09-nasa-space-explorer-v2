@@ -1,0 +1,21 @@
+{
+  "name": "nasa-space-gallery",
+  "version": "1.0.0",
+  "description": "A gallery of space images fetched from the NASA API, featuring a modal view for each image.",
+  "main": "src/js/gallery.js",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Build step not defined'"
+  },
+  "keywords": [
+    "NASA",
+    "space",
+    "gallery",
+    "API"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}

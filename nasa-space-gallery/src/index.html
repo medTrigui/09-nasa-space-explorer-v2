@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasa Space Gallery</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+    <header>
+        <h1>Nasa Space Gallery</h1>
+        <button id="fetch-images">Fetch Space Images</button>
+        <div id="loader" class="loader" style="display: none;">Loading...</div>
+    </header>
+    <main>
+        <section id="gallery" class="gallery"></section>
+    </main>
+    <div id="modal" class="modal" style="display: none;">
+        <span class="close" id="close-modal">&times;</span>
+        <img class="modal-content" id="modal-image">
+        <div class="modal-caption">
+            <h2 id="modal-title"></h2>
+            <p id="modal-date"></p>
+            <p id="modal-explanation"></p>
+        </div>
+    </div>
+    <script src="js/api.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/modal.js"></script>
+    <script>
+        document.getElementById('fetch-images').addEventListener('click', async () => {
+            showLoader();
+            const images = await fetchSpaceImages();
+            displayGallery(images);
+            hideLoader();
+        });
+    </script>
+</body>
+</html>
